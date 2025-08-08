@@ -1,0 +1,285 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+@layer base {
+  html {
+    @apply font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+  
+  body {
+    @apply bg-white dark:bg-secondary-900 text-secondary-900 dark:text-secondary-100;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+  
+  /* Touch-optimized scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-100 dark:bg-secondary-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-300 dark:bg-secondary-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-400 dark:bg-secondary-500;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Base */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200;
+    @apply focus:outline-none focus:ring-4 focus:ring-opacity-20;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+    @apply active:scale-95 transform;
+  }
+  
+  /* Button Sizes */
+  .btn-sm {
+    @apply px-3 py-2 text-sm min-h-[2.5rem] min-w-[2.5rem];
+  }
+  
+  .btn-md {
+    @apply px-4 py-3 text-base min-h-[3rem] min-w-[3rem];
+  }
+  
+  .btn-lg {
+    @apply px-6 py-4 text-lg min-h-[3.5rem] min-w-[3.5rem];
+  }
+  
+  .btn-xl {
+    @apply px-8 py-5 text-xl min-h-[4rem] min-w-[4rem];
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary-600 text-white shadow-lg shadow-primary-600/25;
+    @apply hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/30;
+    @apply focus:ring-primary-600 focus:bg-primary-700;
+    @apply dark:bg-primary-500 dark:hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-900 shadow-md;
+    @apply hover:bg-secondary-200 hover:shadow-lg;
+    @apply focus:ring-secondary-500;
+    @apply dark:bg-secondary-800 dark:text-secondary-100 dark:hover:bg-secondary-700;
+  }
+  
+  .btn-success {
+    @apply bg-success-600 text-white shadow-lg shadow-success-600/25;
+    @apply hover:bg-success-700 hover:shadow-xl hover:shadow-success-600/30;
+    @apply focus:ring-success-600;
+  }
+  
+  .btn-warning {
+    @apply bg-warning-500 text-white shadow-lg shadow-warning-500/25;
+    @apply hover:bg-warning-600 hover:shadow-xl hover:shadow-warning-500/30;
+    @apply focus:ring-warning-500;
+  }
+  
+  .btn-danger {
+    @apply bg-danger-600 text-white shadow-lg shadow-danger-600/25;
+    @apply hover:bg-danger-700 hover:shadow-xl hover:shadow-danger-600/30;
+    @apply focus:ring-danger-600;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-secondary-700 hover:bg-secondary-100;
+    @apply focus:ring-secondary-500;
+    @apply dark:text-secondary-300 dark:hover:bg-secondary-800;
+  }
+  
+  /* Input Styles */
+  .input-base {
+    @apply block w-full rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-secondary-300;
+    @apply text-secondary-900 placeholder:text-secondary-400;
+    @apply focus:ring-2 focus:ring-inset focus:ring-primary-600;
+    @apply disabled:bg-secondary-50 disabled:text-secondary-500 disabled:ring-secondary-200;
+    @apply transition-all duration-200;
+    @apply dark:bg-secondary-800 dark:ring-secondary-700 dark:text-secondary-100;
+    @apply dark:placeholder:text-secondary-500 dark:focus:ring-primary-500;
+    @apply dark:disabled:bg-secondary-900 dark:disabled:ring-secondary-800;
+  }
+  
+  .input-sm {
+    @apply px-3 py-2 text-sm min-h-[2.5rem];
+  }
+  
+  .input-md {
+    @apply px-4 py-3 text-base min-h-[3rem];
+  }
+  
+  .input-lg {
+    @apply px-5 py-4 text-lg min-h-[3.5rem];
+  }
+  
+  .input-error {
+    @apply ring-danger-300 focus:ring-danger-500;
+    @apply dark:ring-danger-700 dark:focus:ring-danger-500;
+  }
+  
+  /* Card Styles */
+  .card-base {
+    @apply bg-white rounded-2xl shadow-lg border border-secondary-200/50;
+    @apply dark:bg-secondary-800 dark:border-secondary-700/50 dark:shadow-2xl;
+    @apply transition-all duration-200;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1;
+    @apply active:scale-100 active:translate-y-0;
+  }
+  
+  /* Animation Classes */
+  .animate-in {
+    @apply animate-fade-in;
+  }
+  
+  .animate-out {
+    @apply animate-fade-out;
+  }
+  
+  /* Touch Optimizations */
+  .touch-target {
+    @apply min-w-[44px] min-h-[44px] p-2;
+  }
+  
+  .touch-friendly {
+    @apply select-none touch-manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Loading States */
+  .loading-shimmer {
+    @apply animate-pulse bg-gradient-to-r from-secondary-200 via-secondary-100 to-secondary-200;
+    @apply dark:from-secondary-800 dark:via-secondary-700 dark:to-secondary-800;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Status Indicators */
+  .status-online {
+    @apply bg-success-500 shadow-glow-success;
+  }
+  
+  .status-offline {
+    @apply bg-secondary-400;
+  }
+  
+  .status-warning {
+    @apply bg-warning-500 animate-pulse;
+  }
+  
+  .status-error {
+    @apply bg-danger-500 shadow-glow-danger animate-pulse;
+  }
+  
+  /* Fuel-specific styles */
+  .fuel-grade-regular {
+    @apply bg-success-500 text-white;
+  }
+  
+  .fuel-grade-mid {
+    @apply bg-warning-500 text-white;
+  }
+  
+  .fuel-grade-premium {
+    @apply bg-danger-500 text-white;
+  }
+  
+  .fuel-grade-diesel {
+    @apply bg-secondary-700 text-white;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-primary-800;
+  }
+  
+  .input-base {
+    @apply border-2 border-secondary-400;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Visible */
+@supports selector(:focus-visible) {
+  *:focus {
+    outline: none;
+  }
+  
+  *:focus-visible {
+    @apply ring-2 ring-primary-500 ring-offset-2;
+  }
+}

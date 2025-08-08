@@ -1,0 +1,95 @@
+@import '@gas-station/ui-components/src/styles/globals.css';
+
+/* POS Terminal specific styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #f8fafc;
+  overflow: hidden; /* Prevent scrolling on POS terminals */
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Touch-specific optimizations */
+@media (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  button, input, select, textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Prevent text selection in POS mode */
+.pos-mode {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Custom scrollbar for POS */
+.pos-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pos-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.pos-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.pos-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card-base {
+    border: 2px solid currentColor;
+  }
+  
+  .btn-base {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin {
+    animation: none;
+  }
+  
+  .animate-pulse {
+    animation: none;
+  }
+}
+
+/* Print receipt styles */
+@media print {
+  body {
+    background: white !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .receipt {
+    width: 3in;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+}
