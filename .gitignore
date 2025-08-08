@@ -95,3 +95,15 @@ jspm_packages/
 # Temporary folders
 tmp/
 temp/
+
+# Large image files and research materials  
+images/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+
+# Git bundles
+*.bundle
