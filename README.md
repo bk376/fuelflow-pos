@@ -1,49 +1,48 @@
-# ⛽ FuelFlow POS - Enterprise Gas Station Point of Sale System
+# ⛽ FuelFlow POS - Modern Gas Station Point of Sale System
 
-> **A modern, enterprise-grade POS system designed to replace legacy Ruby2 systems with superior UI/UX and comprehensive training simulation capabilities.**
+> **A modern, enterprise-grade POS system with comprehensive training simulation capabilities.**
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-active_development-green.svg)
 ![License](https://img.shields.io/badge/license-proprietary-red.svg)
 
-## 🎯 **Project Vision**
+## 🎯 **Project Overview**
 
-FuelFlow POS transforms the gas station experience with:
-- **Modern UI/UX** that outperforms legacy Ruby2 systems
-- **Touch-optimized interfaces** for high-volume operations
-- **Comprehensive training simulator** with gamification
-- **Enterprise scalability** supporting 10,000+ locations
-- **Significant cost reduction** from $11,500+ to <$5,000 per location
+FuelFlow POS is a comprehensive point-of-sale system designed for gas stations and convenience stores, featuring:
+- **Modern UI/UX** with touch-optimized interfaces
+- **Real-time fuel pump control** and monitoring
+- **Interactive training simulator** with gamification
+- **Enterprise scalability** for multi-location operations
 
 ## ✨ **Key Features**
 
-### 🖥️ **Modern POS Terminal**
-- Touch-first design with 44px minimum targets
+### 🖥️ **POS Terminal**
+- Touch-first design optimized for high-volume operations
 - Real-time fuel pump control and monitoring
 - Advanced product catalog with instant search
-- Intelligent shopping cart with automatic tax calculation
+- Intelligent shopping cart with automatic calculations
 - Multi-payment method support (cash, credit, debit, mobile)
 
 ### ⛽ **Fuel Management**
 - Real-time pump status monitoring
 - Automated fuel authorization and control
 - Tank level monitoring with alerts
-- Dynamic pricing with competitive adjustments
-- Emergency stop capabilities
+- Dynamic pricing capabilities
+- Emergency stop functionality
 
 ### 🎓 **Training Simulator**
-- Gamified learning with achievement system
-- Scenario-based training (rush hour, emergencies, difficult customers)
+- Interactive learning with achievement system
+- Scenario-based training modules
 - Performance analytics and progress tracking
-- Role-based skill development paths
-- Multi-player collaborative training
+- Role-based skill development
+- Multi-user collaborative training
 
 ### 🏢 **Enterprise Features**
-- Multi-tenant architecture with data isolation
-- 99.99% uptime with global deployment
-- Comprehensive compliance automation (PCI DSS, EPA, OSHA)
+- Multi-tenant architecture
+- Comprehensive compliance automation
 - Advanced analytics and reporting
-- 24/7 monitoring and support
+- 24/7 system monitoring
+- Multi-location management
 
 ## 🚀 **Technology Stack**
 
@@ -54,17 +53,16 @@ FuelFlow POS transforms the gas station experience with:
 - **Zustand** for lightweight state management
 - **Vite** for fast development and building
 
-### Backend (Planned)
+### Backend
 - **NestJS** for enterprise-grade Node.js APIs
 - **PostgreSQL** with multi-tenant architecture
 - **Redis** for caching and real-time features
-- **Apache Kafka** for event streaming
+- **RESTful API** design
 
 ### Infrastructure
-- **Kubernetes** for container orchestration
-- **AWS** multi-region deployment
 - **Docker** for containerization
-- **Terraform** for infrastructure as code
+- **Modern deployment** practices
+- **Scalable architecture** design
 
 ## 📁 **Project Structure**
 
@@ -73,14 +71,14 @@ fuelflow-pos/
 ├── apps/
 │   ├── pos-terminal/          # React POS interface
 │   ├── manager-dashboard/     # Management interface
-│   └── training-simulator/    # Simulator interface
+│   ├── training-simulator/    # Interactive training
+│   └── landing-page/          # Application launcher
 ├── packages/
 │   ├── types/                 # Shared TypeScript types
 │   ├── ui-components/         # Reusable UI components
 │   ├── api/                   # Backend API services
 │   └── utils/                 # Shared utilities
-├── docs/                      # Documentation
-└── infrastructure/            # Deployment configs
+└── docs/                      # Documentation
 ```
 
 ## 🛠️ **Development Setup**
@@ -93,79 +91,77 @@ fuelflow-pos/
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/bk376/fuelflow-pos.git
 cd fuelflow-pos
 
 # Install dependencies
-npm install --legacy-peer-deps
+npm install
 
-# Start development servers
+# Start all development servers
 npm run dev
 ```
+
+### Application URLs
+- **Landing Page**: http://localhost:3001
+- **POS Terminal**: http://localhost:5173
+- **Training Simulator**: http://localhost:3000
+- **Manager Dashboard**: http://localhost:3005
 
 ### Demo Login
 - **Email**: demo@gasstation.com
 - **Password**: demo123
 
+## 🎮 **Training Simulator Features**
+
+The integrated training simulator provides an interactive learning experience:
+
+### Interactive Learning
+- **Scenario-Based Training**: Real-world situations with guided outcomes  
+- **Achievement System**: Progress tracking with badges and milestones
+- **Step-by-Step Tutorials**: Guided learning for complex procedures
+
+### Training Modules
+- **POS Operation**: Transaction processing and payment handling
+- **Fuel Safety**: Emergency procedures and equipment safety
+- **Customer Service**: Communication and problem resolution
+- **Inventory Management**: Stock tracking and ordering procedures
+- **Compliance**: Age verification and regulatory requirements
+
+### Progress Tracking
+- **Individual Analytics**: Completion rates and skill assessments
+- **Performance Metrics**: Progress monitoring and improvement areas
+
 ## 📊 **Current Status**
 
 ### ✅ Completed
-- [x] Enterprise architecture design
-- [x] Complete database schema
-- [x] UI component library with 10+ specialized components
+- [x] Complete application architecture
+- [x] UI component library with specialized components
 - [x] State management (Auth, Cart, Fuel, Products)
-- [x] Modern login system
-- [x] Core POS terminal interface
-- [x] Fuel management dashboard
+- [x] Modern authentication system
+- [x] POS terminal interface with fuel management
+- [x] Training simulator with gamification
+- [x] Manager dashboard with analytics
+- [x] Beautiful landing page with app launcher
 
 ### 🚧 In Progress
-- [ ] Transaction history interface
-- [ ] System settings panel
-- [ ] Backend API development
-
-### ⏳ Planned
-- [ ] Training simulator implementation
-- [ ] Advanced analytics dashboard
-- [ ] Multi-location management
+- [ ] Backend API implementation
+- [ ] Advanced reporting features
 - [ ] Mobile companion app
 
-## 🎯 **Business Impact**
-
-### Cost Reduction
-- **From**: $11,500-$16,000 (Ruby2 systems)
-- **To**: <$5,000 (FuelFlow POS)
-- **Savings**: 60-70% cost reduction
-
-### Performance Improvements
-- **Training Time**: 60% reduction (4 weeks → 1.5 weeks)
-- **Employee Retention**: 40% improvement
-- **Transaction Speed**: <2 seconds average
-- **System Uptime**: 99.99% target
-
-### Competitive Advantages
-- Modern, intuitive interface
-- Comprehensive training capabilities
-- Enterprise scalability
-- Advanced compliance automation
-- Superior customer experience
-
-## 📈 **Market Opportunity**
-
-- **Target Market**: 150,000+ gas stations in North America
-- **Annual Revenue Potential**: $500M+ (at 10% market penetration)
-- **Key Differentiators**: Training simulation, modern UX, cost efficiency
-- **Competition**: Verifone Ruby2, Gilbarco, NCR
+### ⏳ Planned
+- [ ] Multi-location management
+- [ ] Advanced compliance features
+- [ ] Enhanced analytics dashboard
 
 ## 🤝 **Development Team**
 
-This project represents a complete reimagining of gas station POS systems with enterprise-grade architecture and modern development practices.
+This project represents a modern approach to gas station POS systems with enterprise-grade architecture and development practices.
 
 ## 📞 **Support**
 
-For technical support or business inquiries:
-- **Email**: support@fuelflow.com
-- **Documentation**: [Internal Wiki]
-- **Issue Tracking**: [Project Repository Issues]
+For technical support:
+- **Issues**: [GitHub Issues](https://github.com/bk376/fuelflow-pos/issues)
+- **Documentation**: Project README and code comments
 
 ## 📄 **License**
 
@@ -173,6 +169,6 @@ This project is proprietary software. All rights reserved.
 
 ---
 
-**Built with ❤️ for the future of gas station operations**
+**Built with modern web technologies for the future of retail operations**
 
-*Last updated: August 8, 2025*
+*Last updated: August 11, 2025*
