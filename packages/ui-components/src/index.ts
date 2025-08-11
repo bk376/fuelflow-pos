@@ -8,4 +8,4 @@ export { default as Cart } from './components/Cart';
 export { default as PaymentTerminal } from './components/PaymentTerminal';
 
 // Styles
-export './styles/globals.css';
+import './styles/globals.css';

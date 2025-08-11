@@ -90,7 +90,7 @@ const useFuelStore = create<FuelState>()(
     },
 
     // Private method to simulate fuel dispensing
-    simulateFuelDispensing: (saleId: string) => {
+    simulateFuelDispensing: async (saleId: string) => {
       const sale = get().activeFuelSales.find(s => s.id === saleId);
       if (!sale || sale.status !== 'authorized') return;
 

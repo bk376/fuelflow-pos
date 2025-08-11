@@ -197,29 +197,29 @@ const Settings: React.FC = () => {
                         </div>
 
                         <div className="ml-6">
-                          {setting.toggle ? (
+                          {(setting as any).toggle ? (
                             <div className="flex items-center">
                               <button
                                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                                  setting.enabled
+                                  (setting as any).enabled
                                     ? 'bg-primary-600'
                                     : 'bg-secondary-300 dark:bg-secondary-600'
                                 }`}
                               >
                                 <span
                                   className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                                    setting.enabled ? 'translate-x-6' : 'translate-x-1'
+                                    (setting as any).enabled ? 'translate-x-6' : 'translate-x-1'
                                   }`}
                                 />
                               </button>
                             </div>
-                          ) : setting.options ? (
+                          ) : (setting as any).options ? (
                             <select
                               className="input-base input-sm w-40"
                               value={setting.current}
                               onChange={() => {}}
                             >
-                              {setting.options.map((option) => (
+                              {((setting as any).options || []).map((option: any) => (
                                 <option key={option.value} value={option.value}>
                                   {option.label}
                                 </option>
@@ -241,7 +241,7 @@ const Settings: React.FC = () => {
                                   : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200 dark:bg-secondary-700 dark:text-secondary-300 dark:hover:bg-secondary-600'
                               }`}
                             >
-                              {option.icon}
+                              {(option as any).icon}
                               {option.label}
                             </button>
                           ))}

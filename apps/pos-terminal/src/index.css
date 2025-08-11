@@ -1,4 +1,4 @@
-@import '@gas-station/ui-components/src/styles/globals.css';
+@import './ui-components.css';
 
 /* POS Terminal specific styles */
 body {

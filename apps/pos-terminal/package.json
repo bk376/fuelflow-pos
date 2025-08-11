@@ -14,6 +14,8 @@
     "@gas-station/ui-components": "*",
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.4",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
     "react": "^18.3.1",

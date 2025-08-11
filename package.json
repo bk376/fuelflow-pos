@@ -8,10 +8,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:api dev:pos dev:dashboard dev:training dev:landing",
     "dev:api": "npm run dev --workspace=packages/api",
     "dev:pos": "npm run dev --workspace=apps/pos-terminal",
     "dev:dashboard": "npm run dev --workspace=apps/manager-dashboard",
+    "dev:training": "npm run dev --workspace=apps/training-simulator",
+    "dev:landing": "npm run dev --workspace=apps/landing-page",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",
     "lint": "npm run lint --workspaces",

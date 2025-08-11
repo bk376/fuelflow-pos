@@ -331,10 +331,11 @@ export interface PaginationParams {
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'danger' | 'ghost';
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   loading?: boolean;
   icon?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
 }
@@ -349,6 +350,7 @@ export interface InputProps {
   error?: string;
   label?: string;
   icon?: React.ReactNode;
+  size?: 'sm' | 'md' | 'lg';
   onChange?: (value: string) => void;
   className?: string;
 }
@@ -413,6 +415,7 @@ export interface FuelState {
   authorizePump: (dispenserId: string, amount: number) => Promise<void>;
   completeFuelSale: (saleId: string) => Promise<void>;
   updatePrices: (prices: FuelPrice[]) => Promise<void>;
+  simulateFuelDispensing: (saleId: string) => Promise<void>;
 }
 
 export interface FuelSale {
